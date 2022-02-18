@@ -141,3 +141,5 @@ elif lang == "English":
 
 
 input()
+
+#I hope the code is not shit
