@@ -1,15 +1,18 @@
-import os
+import os, shutil
 
 print("Выберите язык || Choose language")
 lang = input("Русский || English: ")
 
 if lang == "Русский":
     print("Программа создана для web проектов")
-    print("Создать проект ---- Удалить проект ---- Переиминовать Проект")
+    print("Создать проект ---- Удалить проект ---- Переименовать Проект")
     Answer_1 = input("Выбор: ")
 
     if Answer_1 == "Создать проект":
         Answer_2 = input("Как вы хочите ее назвать: ")
+        Answer_html = input("Как вы хочите назвать .html файл: ")
+        Answer_css = input("Как вы хочите назвать .css файл: ")
+        Answer_js = input("Как вы хочите назвать .js файл: ")
         Answer_3 = input("Вам нужен Jquery: ")
         print("Ваш проект создан по этом пути: ", os.getcwd())
 
@@ -18,43 +21,43 @@ if lang == "Русский":
         os.makedirs(f"{Answer_2}/img")
         os.makedirs(f"{Answer_2}/js")
 
-        index_html = open(f"{Answer_2}/index.html", "w")
-        index_html.write("""
+        index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
+        index_html.write(f"""
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/{Answer_css}.css">
         <title>Document</title>
     </head>
     <body>
-        <script src="js/index.js"></script>
+        <script src="js/{Answer_js}.js"></script>
     </body>
     </html>
         """)
 
         if Answer_3 == "Да":
-            index_html = open(f"{Answer_2}/index.html", "w")
-            index_html.write("""
+            index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
+            index_html.write(f"""
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/{Answer_css}.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>Document</title>
     </head>
     <body>
-        <script src="js/index.js"></script>
+        <script src="js/{Answer_js}.js"></script>
     </body>
     </html>
             """)
-        index_css = open(f"{Answer_2}/css/index.css", "w")
-        index_js = open(f"{Answer_2}/js/index.js", "w")
+        index_css = open(f"{Answer_2}/css/{Answer_css}.css", "w")
+        index_js = open(f"{Answer_2}/js/{Answer_js}.js", "w")
 
     elif Answer_1 == "Переиминовать Проект":
         Answer_2 = input("По какому пути находится: ")
@@ -63,13 +66,9 @@ if lang == "Русский":
 
     elif Answer_1 == "Удалить проект":
         Answer_2 = input("По какому пути нахожится ваш проект: ")
-        os.remove(f"{Answer_2}/index.html")
-        os.remove(f"{Answer_2}/js/index.js")
-        os.remove(f"{Answer_2}/css/index.css")
-        os.removedirs(f"{Answer_2}/js")
-        os.removedirs(f"{Answer_2}/img")
-        os.removedirs(f"{Answer_2}/css")
+        shutil.rmtree(f"{Answer_2}")
         print("Ваш проект был успешно удален")
+
 
 elif lang == "English":
     print("The program was created for web projects")
@@ -78,6 +77,9 @@ elif lang == "English":
 
     if Answer_1 == "Create Project":
         Answer_2 = input("What do you want to call her: ")
+        Answer_html = input("What do you want to name the .html file: ")
+        Answer_css = input("What do you want to name the .css file: ")
+        Answer_js = input("What do you want to name the .js file: ")
         Answer_3 = input("You need Jquery: ")
         print("Your project is created in this path: ", os.getcwd())
 
@@ -86,43 +88,43 @@ elif lang == "English":
         os.makedirs(f"{Answer_2}/img")
         os.makedirs(f"{Answer_2}/js")
 
-        index_html = open(f"{Answer_2}/index.html", "w")
-        index_html.write("""
+        index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
+        index_html.write(f"""
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/{Answer_css}.css">
         <title>Document</title>
     </head>
     <body>
-        <script src="js/index.js"></script>
+        <script src="js/{Answer_js}.js"></script>
     </body>
     </html>
         """)
 
         if Answer_3 == "Yes":
-            index_html = open(f"{Answer_2}/index.html", "w")
-            index_html.write("""
+            index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
+            index_html.write(f"""
     <!DOCTYPE html>
     <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="css/{Answer_css}.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <title>Document</title>
     </head>
     <body>
-        <script src="js/index.js"></script>
+        <script src="js/{Answer_js}.js"></script>
     </body>
     </html>
             """)
-        index_css = open(f"{Answer_2}/css/index.css", "w")
-        index_js = open(f"{Answer_2}/js/index.js", "w")
+        index_css = open(f"{Answer_2}/css/{Answer_css}.css", "w")
+        index_js = open(f"{Answer_2}/js/{Answer_js}.js", "w")
 
     elif Answer_1 == "Rename Project":
         Answer_2 = input("Which path is: ")
@@ -131,15 +133,7 @@ elif lang == "English":
 
     elif Answer_1 == "Delete Project":
         Answer_2 = input("What path is your project on: ")
-        os.remove(f"{Answer_2}/index.html")
-        os.remove(f"{Answer_2}/js/index.js")
-        os.remove(f"{Answer_2}/css/index.css")
-        os.removedirs(f"{Answer_2}/js")
-        os.removedirs(f"{Answer_2}/img")
-        os.removedirs(f"{Answer_2}/css")
+        shutil.rmtree(f"{Answer_2}")
         print("Your project has been successfully deleted")
 
-
 input()
-
-#I hope the code is not shit
