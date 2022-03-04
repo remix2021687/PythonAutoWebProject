@@ -14,6 +14,7 @@ if lang == "Русский":
         Answer_css = input("Как вы хочите назвать .css файл: ")
         Answer_js = input("Как вы хочите назвать .js файл: ")
         Answer_3 = input("Вам нужен Jquery: ")
+        Answer_4 = input("Вам нужен Bootstrap: ")
         print("Ваш проект создан по этом пути: ", os.getcwd())
 
         os.mkdir(Answer_2)
@@ -55,7 +56,47 @@ if lang == "Русский":
         <script src="js/{Answer_js}.js"></script>
     </body>
     </html>
-            """)
+        """)
+
+        if Answer_4 == "Да":
+            index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
+            index_html.write(f"""
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/{Answer_css}.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="js/{Answer_js}.js"></script>
+    </body>
+    </html>
+        """)
+
+        if Answer_3 and Answer_4 == "Да":
+            index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
+            index_html.write(f"""
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/{Answer_css}.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="js/{Answer_js}.js"></script>
+    </body>
+    </html>
+        """)
+
         index_css = open(f"{Answer_2}/css/{Answer_css}.css", "w")
         index_js = open(f"{Answer_2}/js/{Answer_js}.js", "w")
 
@@ -81,6 +122,7 @@ elif lang == "English":
         Answer_css = input("What do you want to name the .css file: ")
         Answer_js = input("What do you want to name the .js file: ")
         Answer_3 = input("You need Jquery: ")
+        Answer_4 = input("You need Bootstrap: ")
         print("Your project is created in this path: ", os.getcwd())
 
         os.mkdir(Answer_2)
@@ -123,6 +165,46 @@ elif lang == "English":
     </body>
     </html>
             """)
+
+            if Answer_4 == "Yes":
+                index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
+                index_html.write(f"""
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/{Answer_css}.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="js/{Answer_js}.js"></script>
+    </body>
+    </html>
+        """)
+
+            if Answer_3 and Answer_4 == "Yes":
+                index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
+                index_html.write(f"""
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/{Answer_css}.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <title>Document</title>
+    </head>
+    <body>
+        <script src="js/{Answer_js}.js"></script>
+    </body>
+    </html>
+        """)
+
         index_css = open(f"{Answer_2}/css/{Answer_css}.css", "w")
         index_js = open(f"{Answer_2}/js/{Answer_js}.js", "w")
 
