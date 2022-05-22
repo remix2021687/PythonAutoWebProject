@@ -1,22 +1,22 @@
 import os, shutil
 
-print("Выберите язык || Choose language")
-lang = input("Русский || English: ")
+print("Виберіть мову || Choose language")
+lang = input("Українська || English: ")
 
-if lang == "Русский":
-    print("Программа создана для web разработчиков")
-    print("Выберите действие || Choose action")
-    print("Создать проект ---- Удалить проект ---- Переименовать Проект")
-    Answer_1 = input("Выбор: ")
+#Ukraine
+if lang == "Українська":
+    print("Програма створена для веб-розробників")
+    print("Створити проект ---- Видалити проект ---- Перейменувати Проект")
+    Answer_1 = input("Вибір: ")
 
-    if Answer_1 == "Создать проект":
-        Answer_2 = input("Как вы хочите ее назвать: ")
-        Answer_html = input("Как вы хочите назвать .html файл: ")
-        Answer_css = input("Как вы хочите назвать .css файл: ")
-        Answer_js = input("Как вы хочите назвать .js файл: ")
-        Answer_3 = input("Вам нужен Jquery: ")
-        Answer_4 = input("Вам нужен Bootstrap: ")
-        print("Ваш проект создан по этом пути: ", os.getcwd())
+    if Answer_1 == "Створити проект":
+        Answer_2 = input("Як ви бажаєте її назвати: ")
+        Answer_html = input("Як ви хочете назвати .html файл: ")
+        Answer_css = input("Як ви хочете назвати .css файл: ")
+        Answer_js = input("Як ви хочете назвати .js файл: ")
+        Answer_3 = input("Вам потрібний Jquery: ")
+        Answer_4 = input("Вам потрібний Bootstrap: ")
+        print("Ваш проект створено цим шляхом: ", os.getcwd())
 
         os.mkdir(Answer_2)
         os.makedirs(f"{Answer_2}/css")
@@ -25,93 +25,93 @@ if lang == "Русский":
 
         index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
         index_html.write(f"""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/{Answer_css}.css">
-        <title>Document</title>
-    </head>
-    <body>
-        <script src="js/{Answer_js}.js"></script>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/{Answer_css}.css">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/{Answer_js}.js"></script>
+</body>
+</html>
         """)
 
-        if Answer_3 == "Да":
+        if Answer_3 == "Так":
             index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
             index_html.write(f"""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/{Answer_css}.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <title>Document</title>
-    </head>
-    <body>
-        <script src="js/{Answer_js}.js"></script>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/{Answer_css}.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/{Answer_js}.js"></script>
+</body>
+</html>
         """)
 
-        if Answer_4 == "Да":
+        if Answer_4 == "Так":
             index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
             index_html.write(f"""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/{Answer_css}.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <title>Document</title>
-    </head>
-    <body>
-        <script src="js/{Answer_js}.js"></script>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/{Answer_css}.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/{Answer_js}.js"></script>
+</body>
+</html>
         """)
 
-        if Answer_3 and Answer_4 == "Да":
+        if Answer_3 and Answer_4 == "Так":
             index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
             index_html.write(f"""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/{Answer_css}.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <title>Document</title>
-    </head>
-    <body>
-        <script src="js/{Answer_js}.js"></script>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/{Answer_css}.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/{Answer_js}.js"></script>
+</body>
+</html>
         """)
 
         index_css = open(f"{Answer_2}/css/{Answer_css}.css", "w")
         index_js = open(f"{Answer_2}/js/{Answer_js}.js", "w")
 
-    elif Answer_1 == "Переиминовать Проект":
-        Answer_2 = input("По какому пути находится: ")
-        Answer_3 = input("Новое имя для проекта: ")
+    elif Answer_1 == "Перейменувати Проект":
+        Answer_2 = input("Яким шляхом перебуває: ")
+        Answer_3 = input("Нове ім'я для проекту: ")
         os.rename(f"{Answer_2}", f"{Answer_3}")
 
-    elif Answer_1 == "Удалить проект":
-        Answer_2 = input("По какому пути нахожится ваш проект: ")
+    elif Answer_1 == "Видалити проект":
+        Answer_2 = input("Яким шляхом знаходиться ваш проект: ")
         shutil.rmtree(f"{Answer_2}")
-        print("Ваш проект был успешно удален")
+        print("Ваш проект був успішно видалений")
 
-
+#English
 elif lang == "English":
     print("The program was created for web projects")
     print("Create Project ---- Delete Project ---- Rename Project")
@@ -133,77 +133,77 @@ elif lang == "English":
 
         index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
         index_html.write(f"""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/{Answer_css}.css">
-        <title>Document</title>
-    </head>
-    <body>
-        <script src="js/{Answer_js}.js"></script>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/{Answer_css}.css">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/{Answer_js}.js"></script>
+</body>
+</html>
         """)
 
         if Answer_3 == "Yes":
             index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
             index_html.write(f"""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/{Answer_css}.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <title>Document</title>
-    </head>
-    <body>
-        <script src="js/{Answer_js}.js"></script>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/{Answer_css}.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/{Answer_js}.js"></script>
+</body>
+</html>
             """)
 
             if Answer_4 == "Yes":
                 index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
                 index_html.write(f"""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/{Answer_css}.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <title>Document</title>
-    </head>
-    <body>
-        <script src="js/{Answer_js}.js"></script>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/{Answer_css}.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/{Answer_js}.js"></script>
+</body>
+</html>
         """)
 
             if Answer_3 and Answer_4 == "Yes":
                 index_html = open(f"{Answer_2}/{Answer_html}.html", "w")
                 index_html.write(f"""
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/{Answer_css}.css">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <title>Document</title>
-    </head>
-    <body>
-        <script src="js/{Answer_js}.js"></script>
-    </body>
-    </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/{Answer_css}.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <script src="js/{Answer_js}.js"></script>
+</body>
+</html>
         """)
 
         index_css = open(f"{Answer_2}/css/{Answer_css}.css", "w")
