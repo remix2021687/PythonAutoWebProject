@@ -1,4 +1,5 @@
 import os, shutil
+import localisation as loc
 
 print("Виберіть мову || Choose language")
 lang = input("Українська || English: ")
@@ -32,7 +33,7 @@ if lang == "Українська":
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/{Answer_css}.css">
-    <title>Document</title>
+    <title>{Answer_2}</title>
 </head>
 <body>
     <script src="js/{Answer_js}.js"></script>
